@@ -21,3 +21,42 @@ end
 function Max(x,y)
 	return ((x > y) and x) or y;
 end
+
+-- Polynomial function
+function Polynomial(p,x)
+	local result = 0;
+	for i = 1, #p do
+		result = result + p[i] * (x^(i-1));
+	end
+	return result;
+end
+
+-- Polynomial function
+function Polynomial2(p,x)
+	local result = 0;
+	for i = 1, #p do
+		local expo = 1;
+		for j = 1, (i-1) do
+			expo = expo * x;
+		end
+
+		result = result + p[i] * expo;
+	end
+	return result;
+end
+
+
+-- Polynomial function
+function Polynomial3(x,...)
+	local result = 0;
+	local poly = unpack(arg);
+	for i = 1, #poly do
+		local expo = 1;
+		for j = 1, (i-1) do
+			expo = expo * x;
+		end
+
+		result = result + poly[i] * expo;
+	end
+	return result;
+end
