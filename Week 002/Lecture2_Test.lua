@@ -82,3 +82,13 @@ end
 
 print("2^3^4: " , 2^3^4);
 print("2^-3^4: " , 2^-3^4);
+
+
+ -- Print key and value of a table
+Tab = {T = 7, j = 9, k = 78};
+
+for k,v in pairs(Tab)
+do
+print(k,v);
+end
+
